@@ -12,6 +12,8 @@ struct protocol_config
     uint16_t bufferSize = 1024;
     uint8_t pinRX = 18;
     uint8_t pinTX = 17;
+    uint8_t header = 0xAA;
+    uint8_t maxPacketSize = 100;
 };
 
 class UARTProtocol
@@ -34,7 +36,7 @@ private:
     };
 
 public:
-    UARTProtocol(protocol_config config, uint8_t header, uint8_t maxPacketSize);
+    UARTProtocol(protocol_config config);
 
     void begin();
 

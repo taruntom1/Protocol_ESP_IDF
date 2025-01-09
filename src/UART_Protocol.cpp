@@ -1,9 +1,9 @@
 #include "UART_Protocol.h"
 
-UARTProtocol::UARTProtocol(protocol_config config, uint8_t header, uint8_t maxPacketSize)
+UARTProtocol::UARTProtocol(protocol_config config)
     : config{config},
-      header{header},
-      maxPacketSize{maxPacketSize} {}
+      header{config.header},
+      maxPacketSize{config.maxPacketSize} {}
 
 void UARTProtocol::begin()
 {

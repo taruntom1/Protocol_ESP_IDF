@@ -12,7 +12,7 @@ void print(void *pvParameters)
     config.port = UART_NUM_1;
     config.baudRate = 115200;
 
-    UARTProtocol protocol(config, 0xAA, 100);
+    UARTProtocol protocol(config);
     protocol.begin();
 
     uint8_t recievedCommand = 0x00;
@@ -27,7 +27,6 @@ void print(void *pvParameters)
         protocol.SendCommand(command);
         protocol.SendData(data, 5);
         protocol.ReadCommand(recievedCommand, 2000);
-
 
         vTaskDelay(pdMS_TO_TICKS(1000));
     }

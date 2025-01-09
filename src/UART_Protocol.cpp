@@ -15,21 +15,21 @@ void UARTProtocol::begin()
 
     ESP_ERROR_CHECK(uart_driver_install(config.port, config.bufferSize, config.bufferSize, 0, nullptr, 0));
 
-    ESP_LOGI("UART", "UART1 initialized successfully");
+    ESP_LOGV("UART", "UART1 initialized successfully");
 }
 
 void UARTProtocol::SendCommand(const uint8_t &command)
 {
     static uint8_t commandArr[2] = {header, 0x00};
     commandArr[1] = command;
-    ESP_LOGI("UART", "Sending command: %d", command);
+    ESP_LOGV("UART", "Sending command: %d", command);
     uart_write_bytes(config.port, commandArr, 2);
 }
 
 void UARTProtocol::SendData(const uint8_t *data, const uint8_t length)
 {
     uart_write_bytes(config.port, data, length);
-    ESP_LOGI("UART", "Sent data of length: %d", length);
+    ESP_LOGV("UART", "Sent data of length: %d", length);
 }
 
 bool UARTProtocol::ReadCommand(uint8_t &command)
@@ -39,20 +39,20 @@ bool UARTProtocol::ReadCommand(uint8_t &command)
     {
         if (command == header)
         {
-            ESP_LOGI("UART", "Header received");
+            ESP_LOGV("UART", "Header received");
             if (uart_read_bytes(config.port, &command, 1, pdMS_TO_TICKS(10)) > 0)
             {
-                ESP_LOGI("UART", "Command read: %d", command);
+                ESP_LOGV("UART", "Command read: %d", command);
                 return true;
             }
             else
             {
-                ESP_LOGE("UART", "Timeout reading command");
+                ESP_LOGI("UART", "Timeout reading command");
                 return false;
             }
         }
     }
-    ESP_LOGI("UART", "No header received");
+    ESP_LOGV("UART", "No header received");
     return false;
 }
 
@@ -60,28 +60,28 @@ bool UARTProtocol::ReadCommand(uint8_t &command, uint32_t timeout_ms)
 {
     static uint32_t tickCount;
     tickCount = xTaskGetTickCount();
-    ESP_LOGI("UART", "Reading command with timeout");
+    ESP_LOGV("UART", "Reading command with timeout");
     while (xTaskGetTickCount() - tickCount < pdMS_TO_TICKS(timeout_ms))
     {
         while (uart_read_bytes(config.port, &command, 1, 0) > 0)
         {
             if (command == header)
             {
-                ESP_LOGI("UART", "Header received");
+                ESP_LOGV("UART", "Header received");
                 if (uart_read_bytes(config.port, &command, 1, pdMS_TO_TICKS(10)) > 0)
                 {
-                    ESP_LOGI("UART", "Command read: %d", command);
+                    ESP_LOGV("UART", "Command read: %d", command);
                     return true;
                 }
                 else
                 {
-                    ESP_LOGE("UART", "Timeout reading command");
+                    ESP_LOGI("UART", "Timeout reading command");
                     return false;
                 }
             }
         }
     }
-    ESP_LOGI("UART", "No header received within timeout");
+    ESP_LOGV("UART", "No header received within timeout");
     return false;
 }
 
@@ -89,12 +89,12 @@ bool UARTProtocol::ReadData(uint8_t *data, uint8_t length)
 {
     if (uart_read_bytes(config.port, data, length, pdMS_TO_TICKS(1000)) >= length)
     {
-        ESP_LOGI("UART", "Received data of length: %d", length);
+        ESP_LOGV("UART", "Received data of length: %d", length);
         return true;
     }
     else
     {
-        ESP_LOGE("UART", "Timeout reading data");
+        ESP_LOGI("UART", "Timeout reading data");
         return false;
     }
 }
@@ -103,12 +103,12 @@ bool UARTProtocol::ReadData(uint8_t *data, uint8_t length, uint32_t timeout_ms)
 {
     if (uart_read_bytes(config.port, data, length, pdMS_TO_TICKS(timeout_ms)) >= length)
     {
-        ESP_LOGI("UART", "Received data of length: %d", length);
+        ESP_LOGV("UART", "Received data of length: %d", length);
         return true;
     }
     else
     {
-        ESP_LOGE("UART", "Timeout reading data");
+        ESP_LOGI("UART", "Timeout reading data");
         return false;
     }
 }

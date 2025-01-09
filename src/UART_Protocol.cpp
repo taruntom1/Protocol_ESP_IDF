@@ -18,7 +18,7 @@ void UARTProtocol::begin()
     ESP_LOGI("UART", "UART1 initialized successfully");
 }
 
-void UARTProtocol::SendCommand(uint8_t &command)
+void UARTProtocol::SendCommand(const uint8_t &command)
 {
     static uint8_t commandArr[2] = {header, 0x00};
     commandArr[1] = command;
@@ -26,7 +26,7 @@ void UARTProtocol::SendCommand(uint8_t &command)
     uart_write_bytes(config.port, commandArr, 2);
 }
 
-void UARTProtocol::SendData(uint8_t *data, uint8_t length)
+void UARTProtocol::SendData(const uint8_t *data, const uint8_t length)
 {
     uart_write_bytes(config.port, data, length);
     ESP_LOGI("UART", "Sent data of length: %d", length);

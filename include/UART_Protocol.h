@@ -40,8 +40,8 @@ public:
 
     void begin();
 
-    void SendCommand(uint8_t &commandType);
-    void SendData(uint8_t *data, uint8_t length);
+    void SendCommand(const uint8_t &commandType);
+    void SendData(const uint8_t *data, const uint8_t length);
     bool ReadCommand(uint8_t &commandType);
     bool ReadCommand(uint8_t &commandType, uint32_t timeout);
     bool ReadData(uint8_t *data, uint8_t length, uint32_t timeout);

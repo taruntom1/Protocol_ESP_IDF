@@ -1,0 +1,184 @@
+\doxysection{UARTProtocol Class Reference}
+\hypertarget{class_u_a_r_t_protocol}{}\label{class_u_a_r_t_protocol}\index{UARTProtocol@{UARTProtocol}}
+
+
+Provides a protocol layer for UART communication.  
+
+
+
+
+{\ttfamily \#include $<$UART\+\_\+\+Protocol.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_u_a_r_t_protocol_ab24748ac7521f934530069bb028c31a8}{UARTProtocol}} (\mbox{\hyperlink{structprotocol__config}{protocol\+\_\+config}} config)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_u_a_r_t_protocol}{UARTProtocol} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_a_r_t_protocol_a76c9968efe8eb7d350a7fa1f9effb5ab}{begin}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the UART protocol with the specified configuration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_a_r_t_protocol_a6f679b1a010b39f2901f4969e6486745}{Send\+Command}} (const uint8\+\_\+t \&command\+Type)
+\begin{DoxyCompactList}\small\item\em Sends a command over UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_u_a_r_t_protocol_a6b94d73468c165a53c768303260e9569}{Send\+Data}} (const uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, const uint8\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Sends data over UART. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_u_a_r_t_protocol_a645c38ae38a897a9805addfe0514b576}{Read\+Command}} (uint8\+\_\+t \&command\+Type)
+\begin{DoxyCompactList}\small\item\em Reads a command from UART. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_u_a_r_t_protocol_a2673f08f0aa10b667bf92fc6de57e691}{Read\+Command}} (uint8\+\_\+t \&command\+Type, uint32\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em Reads a command from UART with a timeout. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_u_a_r_t_protocol_ae9f0a21e18b3e3f64fbe2da5ca383f72}{Read\+Data}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint8\+\_\+t length, uint32\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em Reads data from UART with a timeout. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_u_a_r_t_protocol_a5ed51e74db88d81abdb70e5686675e58}{Read\+Data}} (uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, uint8\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Reads data from UART. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides a protocol layer for UART communication. 
+
+The \doxylink{class_u_a_r_t_protocol}{UARTProtocol} class encapsulates UART communication functionality, including sending and receiving commands and data, with header and checksum validation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_u_a_r_t_protocol_ab24748ac7521f934530069bb028c31a8}\index{UARTProtocol@{UARTProtocol}!UARTProtocol@{UARTProtocol}}
+\index{UARTProtocol@{UARTProtocol}!UARTProtocol@{UARTProtocol}}
+\doxysubsubsection{\texorpdfstring{UARTProtocol()}{UARTProtocol()}}
+{\footnotesize\ttfamily \label{class_u_a_r_t_protocol_ab24748ac7521f934530069bb028c31a8} 
+UARTProtocol\+::\+UARTProtocol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structprotocol__config}{protocol\+\_\+config}}}]{config}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_u_a_r_t_protocol}{UARTProtocol} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & Configuration settings for the protocol. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_u_a_r_t_protocol_a76c9968efe8eb7d350a7fa1f9effb5ab}\index{UARTProtocol@{UARTProtocol}!begin@{begin}}
+\index{begin@{begin}!UARTProtocol@{UARTProtocol}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \label{class_u_a_r_t_protocol_a76c9968efe8eb7d350a7fa1f9effb5ab} 
+void UARTProtocol\+::begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the UART protocol with the specified configuration. 
+
+\Hypertarget{class_u_a_r_t_protocol_a645c38ae38a897a9805addfe0514b576}\index{UARTProtocol@{UARTProtocol}!ReadCommand@{ReadCommand}}
+\index{ReadCommand@{ReadCommand}!UARTProtocol@{UARTProtocol}}
+\doxysubsubsection{\texorpdfstring{ReadCommand()}{ReadCommand()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_u_a_r_t_protocol_a645c38ae38a897a9805addfe0514b576} 
+bool UARTProtocol\+::\+Read\+Command (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \&}]{command\+Type}{}\end{DoxyParamCaption})}
+
+
+
+Reads a command from UART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+Type} & Reference to store the received command type. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a command was successfully read, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_u_a_r_t_protocol_a2673f08f0aa10b667bf92fc6de57e691}\index{UARTProtocol@{UARTProtocol}!ReadCommand@{ReadCommand}}
+\index{ReadCommand@{ReadCommand}!UARTProtocol@{UARTProtocol}}
+\doxysubsubsection{\texorpdfstring{ReadCommand()}{ReadCommand()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_u_a_r_t_protocol_a2673f08f0aa10b667bf92fc6de57e691} 
+bool UARTProtocol\+::\+Read\+Command (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \&}]{command\+Type}{, }\item[{uint32\+\_\+t}]{timeout}{}\end{DoxyParamCaption})}
+
+
+
+Reads a command from UART with a timeout. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+Type} & Reference to store the received command type. \\
+\hline
+{\em timeout} & Timeout duration in milliseconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a command was successfully read, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_u_a_r_t_protocol_a5ed51e74db88d81abdb70e5686675e58}\index{UARTProtocol@{UARTProtocol}!ReadData@{ReadData}}
+\index{ReadData@{ReadData}!UARTProtocol@{UARTProtocol}}
+\doxysubsubsection{\texorpdfstring{ReadData()}{ReadData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_u_a_r_t_protocol_a5ed51e74db88d81abdb70e5686675e58} 
+bool UARTProtocol\+::\+Read\+Data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint8\+\_\+t}]{length}{}\end{DoxyParamCaption})}
+
+
+
+Reads data from UART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to store the received data. \\
+\hline
+{\em length} & Length of the data to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if data was successfully read, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_u_a_r_t_protocol_ae9f0a21e18b3e3f64fbe2da5ca383f72}\index{UARTProtocol@{UARTProtocol}!ReadData@{ReadData}}
+\index{ReadData@{ReadData}!UARTProtocol@{UARTProtocol}}
+\doxysubsubsection{\texorpdfstring{ReadData()}{ReadData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_u_a_r_t_protocol_ae9f0a21e18b3e3f64fbe2da5ca383f72} 
+bool UARTProtocol\+::\+Read\+Data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{uint8\+\_\+t}]{length}{, }\item[{uint32\+\_\+t}]{timeout}{}\end{DoxyParamCaption})}
+
+
+
+Reads data from UART with a timeout. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to store the received data. \\
+\hline
+{\em length} & Length of the data to read. \\
+\hline
+{\em timeout} & Timeout duration in milliseconds. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if data was successfully read, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_u_a_r_t_protocol_a6f679b1a010b39f2901f4969e6486745}\index{UARTProtocol@{UARTProtocol}!SendCommand@{SendCommand}}
+\index{SendCommand@{SendCommand}!UARTProtocol@{UARTProtocol}}
+\doxysubsubsection{\texorpdfstring{SendCommand()}{SendCommand()}}
+{\footnotesize\ttfamily \label{class_u_a_r_t_protocol_a6f679b1a010b39f2901f4969e6486745} 
+void UARTProtocol\+::\+Send\+Command (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \&}]{command\+Type}{}\end{DoxyParamCaption})}
+
+
+
+Sends a command over UART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+Type} & The type of command to send. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_u_a_r_t_protocol_a6b94d73468c165a53c768303260e9569}\index{UARTProtocol@{UARTProtocol}!SendData@{SendData}}
+\index{SendData@{SendData}!UARTProtocol@{UARTProtocol}}
+\doxysubsubsection{\texorpdfstring{SendData()}{SendData()}}
+{\footnotesize\ttfamily \label{class_u_a_r_t_protocol_a6b94d73468c165a53c768303260e9569} 
+void UARTProtocol\+::\+Send\+Data (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{const uint8\+\_\+t}]{length}{}\end{DoxyParamCaption})}
+
+
+
+Sends data over UART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the data array to send. \\
+\hline
+{\em length} & Length of the data array. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_u_a_r_t___protocol_8h}{UART\+\_\+\+Protocol.\+h}}\item 
+src/\mbox{\hyperlink{_u_a_r_t___protocol_8cpp}{UART\+\_\+\+Protocol.\+cpp}}\end{DoxyCompactItemize}

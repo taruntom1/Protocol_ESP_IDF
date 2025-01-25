@@ -1,0 +1,83 @@
+\doxysection{protocol\+\_\+config Struct Reference}
+\hypertarget{structprotocol__config}{}\label{structprotocol__config}\index{protocol\_config@{protocol\_config}}
+
+
+Configuration structure for \doxylink{class_u_a_r_t_protocol}{UARTProtocol}.  
+
+
+
+
+{\ttfamily \#include $<$UART\+\_\+\+Protocol.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structprotocol__config_a3a1efcb6daaacf6c615069cd64831944}{baud\+Rate}} = 115200
+\item 
+uart\+\_\+port\+\_\+t \mbox{\hyperlink{structprotocol__config_aa7951e7625eff4b6add13880f9f485ce}{port}} = UART\+\_\+\+NUM\+\_\+1
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structprotocol__config_aace7bdb6052b5ac878c6b432ee670a43}{buffer\+Size}} = 1024
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structprotocol__config_a69fb44d8036cf78ae1bd61cc5bb8ab4c}{pin\+RX}} = 18
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structprotocol__config_a9055867638b9c0411c56d2f115a24bec}{pin\+TX}} = 17
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structprotocol__config_a7d83be3c0153e31bf1cd0258c82a54b7}{header}} = 0x\+AA
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structprotocol__config_a5329f18260a8c32328c2016a7be70afe}{max\+Packet\+Size}} = 100
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Configuration structure for \doxylink{class_u_a_r_t_protocol}{UARTProtocol}. 
+
+This structure holds the configuration parameters required to initialize the \doxylink{class_u_a_r_t_protocol}{UARTProtocol} class, such as baud rate, UART port, buffer size, and pin settings. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structprotocol__config_a3a1efcb6daaacf6c615069cd64831944}\index{protocol\_config@{protocol\_config}!baudRate@{baudRate}}
+\index{baudRate@{baudRate}!protocol\_config@{protocol\_config}}
+\doxysubsubsection{\texorpdfstring{baudRate}{baudRate}}
+{\footnotesize\ttfamily \label{structprotocol__config_a3a1efcb6daaacf6c615069cd64831944} 
+int protocol\+\_\+config\+::baud\+Rate = 115200}
+
+Baud rate for UART communication. \Hypertarget{structprotocol__config_aace7bdb6052b5ac878c6b432ee670a43}\index{protocol\_config@{protocol\_config}!bufferSize@{bufferSize}}
+\index{bufferSize@{bufferSize}!protocol\_config@{protocol\_config}}
+\doxysubsubsection{\texorpdfstring{bufferSize}{bufferSize}}
+{\footnotesize\ttfamily \label{structprotocol__config_aace7bdb6052b5ac878c6b432ee670a43} 
+uint16\+\_\+t protocol\+\_\+config\+::buffer\+Size = 1024}
+
+Size of the UART buffer. \Hypertarget{structprotocol__config_a7d83be3c0153e31bf1cd0258c82a54b7}\index{protocol\_config@{protocol\_config}!header@{header}}
+\index{header@{header}!protocol\_config@{protocol\_config}}
+\doxysubsubsection{\texorpdfstring{header}{header}}
+{\footnotesize\ttfamily \label{structprotocol__config_a7d83be3c0153e31bf1cd0258c82a54b7} 
+uint8\+\_\+t protocol\+\_\+config\+::header = 0x\+AA}
+
+Header byte for the protocol. \Hypertarget{structprotocol__config_a5329f18260a8c32328c2016a7be70afe}\index{protocol\_config@{protocol\_config}!maxPacketSize@{maxPacketSize}}
+\index{maxPacketSize@{maxPacketSize}!protocol\_config@{protocol\_config}}
+\doxysubsubsection{\texorpdfstring{maxPacketSize}{maxPacketSize}}
+{\footnotesize\ttfamily \label{structprotocol__config_a5329f18260a8c32328c2016a7be70afe} 
+uint8\+\_\+t protocol\+\_\+config\+::max\+Packet\+Size = 100}
+
+Maximum size of a data packet. \Hypertarget{structprotocol__config_a69fb44d8036cf78ae1bd61cc5bb8ab4c}\index{protocol\_config@{protocol\_config}!pinRX@{pinRX}}
+\index{pinRX@{pinRX}!protocol\_config@{protocol\_config}}
+\doxysubsubsection{\texorpdfstring{pinRX}{pinRX}}
+{\footnotesize\ttfamily \label{structprotocol__config_a69fb44d8036cf78ae1bd61cc5bb8ab4c} 
+uint8\+\_\+t protocol\+\_\+config\+::pin\+RX = 18}
+
+RX pin number. \Hypertarget{structprotocol__config_a9055867638b9c0411c56d2f115a24bec}\index{protocol\_config@{protocol\_config}!pinTX@{pinTX}}
+\index{pinTX@{pinTX}!protocol\_config@{protocol\_config}}
+\doxysubsubsection{\texorpdfstring{pinTX}{pinTX}}
+{\footnotesize\ttfamily \label{structprotocol__config_a9055867638b9c0411c56d2f115a24bec} 
+uint8\+\_\+t protocol\+\_\+config\+::pin\+TX = 17}
+
+TX pin number. \Hypertarget{structprotocol__config_aa7951e7625eff4b6add13880f9f485ce}\index{protocol\_config@{protocol\_config}!port@{port}}
+\index{port@{port}!protocol\_config@{protocol\_config}}
+\doxysubsubsection{\texorpdfstring{port}{port}}
+{\footnotesize\ttfamily \label{structprotocol__config_aa7951e7625eff4b6add13880f9f485ce} 
+uart\+\_\+port\+\_\+t protocol\+\_\+config\+::port = UART\+\_\+\+NUM\+\_\+1}
+
+UART port number. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{_u_a_r_t___protocol_8h}{UART\+\_\+\+Protocol.\+h}}\end{DoxyCompactItemize}

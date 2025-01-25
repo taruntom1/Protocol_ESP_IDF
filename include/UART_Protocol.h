@@ -23,8 +23,6 @@ private:
     uint8_t header;
     uint8_t maxPacketSize;
 
-    uint8_t calculateChecksum(uint8_t commandType, uint8_t *data, uint8_t length); // length = length of data
-
     uart_config_t uart_config = {
         .baud_rate = 115200,
         .data_bits = UART_DATA_8_BITS,
@@ -48,14 +46,4 @@ public:
     bool ReadData(uint8_t *data, uint8_t length);
 };
 
-#endif // UARTPROTOCOL_H
-
-// bool sendPacket(uint8_t commandType, uint8_t *parameters, uint8_t parameterCount, bool checkChecksum = true);
-
-// void SendChecksum(uint8_t commandType, uint8_t *data, uint8_t length);
-//
-
-// bool VerifyChecksum(uint8_t &commandType, uint8_t *data, uint8_t length);
-// bool receivePacket(uint8_t &commandType, uint8_t *parameters, uint8_t parameterCount, bool checkChecksum = true);
-
-// bool available();
+#endif
